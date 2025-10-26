@@ -1,5 +1,5 @@
 compile: main.cpp 
-	 gcc  main.cpp -o sort
+	 g++  main.cpp -o sort
 
 run: sort
 	 ./sort
