@@ -1,13 +1,14 @@
 // selection sort function module in C
+#include <iostream>
+
 
 void display(int a[],int n){
-
     int i;
 
-    for(i=0;i<n;i++)
-        printf("%5d",a[i]);
-    printf("\n");
-  
+    for(i=0;i<n;i++){
+    std::cout << a[i] << " ";
+}
+    std::cout<<std::endl;
 }
 
 void swap(int *a,int *b){
@@ -33,7 +34,10 @@ void selectionSort(int data[], int length){
         }
         display(data, length);
     }
+    std::cout<<"======================"<<std::endl;
 }
+
+
 void insertion(int a[], int n){
   int i, j;
   for (j=1; j<n; j++) {
@@ -46,23 +50,27 @@ void insertion(int a[], int n){
           display(a,n);
       }
       a[i+1] = value;
-      printf("======================\n");
   }
+  std::cout<<"======================"<<std::endl;
 }
 
 
-void bubbleSort(int a[],int n){
-  int i,j;
-  int sorted;
-    sorted = 1;
-      for(j=1;j<=n-1;j++){
-        if(a[j]>a[j+1]){
-        swap(&a[j],a[j+1]);
-        sorted = 0;
-        }    
-      display(a,n);
+void bubbleSort(int a[], int n){
+    int i, j;
+    int swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = 0;                      
+        for (j = 0; j < n - 1 - i; j++) { 
+            if (a[j] > a[j + 1]) {
+                swap(&a[j], &a[j + 1]);
+                swapped = 1;
+            }
+        }
+        display(a, n);                    
+        if (!swapped) 
+        break;           
     }
-    if (sorted)break;
+    std::cout<<"======================"<<std::endl;
 }
 
 
